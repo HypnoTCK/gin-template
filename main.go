@@ -11,6 +11,10 @@ import (
 
 func main() {
 	err := godotenv.Load(".env")
+
+	if err != nil {
+		log.Fatalf("Some error occured. Err: %s", err)
+	}
 	
 	port := flag.Int("port", 3000, "webserver port")
 	mode := flag.String("mode", "release", "dev or release")
