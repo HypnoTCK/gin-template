@@ -6,9 +6,12 @@ import (
 	"net/http"
 
 	"github.com/gin-gonic/gin"
+	"github.com/joho/godotenv"
 )
 
 func main() {
+	err := godotenv.Load(".env")
+	
 	port := flag.Int("port", 3000, "webserver port")
 	mode := flag.String("mode", "release", "dev or release")
 
